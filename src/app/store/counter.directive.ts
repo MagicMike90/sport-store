@@ -10,8 +10,10 @@ export class CounterDirective {
   constructor(private container: ViewContainerRef,
     private template: TemplateRef<Object>) {
   }
-  @Input("counterOf")
-  counter: number;
+
+  // Binding to an @Input property with an alias counterOf
+  @Input("counterOf") counter: number;
+
   ngOnChanges(changes: SimpleChanges) {
     this.container.clear();
     for (let i = 0; i < this.counter; i++) {
