@@ -1,0 +1,20 @@
+<ul class="navbar-nav mr-auto">
+  <span class="navbar-text text-white">
+  <small>
+  Your cart:
+  <span *ngIf="cart.itemCount > 0">
+  {{ cart.itemCount }} item(s)
+  {{ cart.cartPrice | currency:"USD":true:"2.2-2" }}
+  </span>
+  <span *ngIf="cart.itemCount == 0">
+  (empty)
+  </span>
+  </small>
+  </span>
+
+  <li class="nav-item">
+    <a class="nav-link cart-icon" [class.disabled]="cart.itemCount == 0" routerLink="/cart">
+  <i class="fa fa-shopping-cart"></i>
+  </a>
+  </li>
+</ul>
